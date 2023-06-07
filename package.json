@@ -1,0 +1,14 @@
+{
+  "name": "codeprojects-main",
+  "version": "1.0.0",
+  "description": "CODEProejects is a way for software engineers, any experience level. To learn how to make fun and expandable projects, or that can even become your full time job.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  }
+}
