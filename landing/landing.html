@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.svg" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+
+    <title>Landing Page · CODEProjects</title>
+</head>
+<body>
+
+    <h2>CODEProjects</h2>
+
+    <div class="expose">
+        <form>
+          <a id="signup-link" href="#" onclick="showDiv('signup')"><h1>Signup</h1></a>
+          <a id="login-link" href="#" onclick="showDiv('login')"><h1>Login</h1></a>
+        </form>
+      </div>
+      
+      <form>
+
+        <div class="myDiv" id="signup" style="display:none">
+            <form>
+              <h3 id="signup-text">Welcome! Glad you're here!</h3>
+          
+              <h3 id="email-text">Email:</h3>
+              <input type="email" name="signup-email" placeholder="your email" required>
+          
+              <h3 id="password-text">Password:</h3>
+              <input type="password" name="signup-password" placeholder="your password" min="8" max="80" required>
+          <br>
+              <input type="submit" value="Create Account" onclick="saveEmailAddress(event)" />
+            </form>
+          </div>
+          
+          <script>
+          function saveEmailAddress(event) {
+            event.preventDefault(); // Prevent form submission
+          
+            var emailInput = document.querySelector('#signup input[name="signup-email"]');
+            var passwordInput = document.querySelector('#signup input[name="signup-password"]');
+          
+            var email = emailInput.value;
+          
+            if (email && password) {
+              localStorage.setItem('email', email);
+              console.log('Saving email address and password...');
+              console.log('Saved email address:', email);
+              console.log('Saved password:', password);
+              location.href = 'http://127.0.0.1:5500/account/login/moreDetails/more-details.html';
+            }
+          }
+          </script>
+          
+
+    <div class="myDiv" id="login" style="display:none">
+        <form>
+
+          <h3>Welcome! Glad your back!</h3>
+
+          <h3>Email:</h3>
+          <input type="email" name="signup-email" placeholder="email" required>
+        
+          <h3>Password</h3>
+          <input type="password" name="signup-password" placeholder="password" min="8" max="80" required>
+        <br>
+    
+
+          <input type="submit" onclick="http://127.0.0.1:5500/.app/app.html" value="Login">
+  
+        </form>
+      </div>
+      
+      <script>
+        function showDiv(divId) {
+          var divs = document.getElementsByClassName('myDiv');
+          for (var i = 0; i < divs.length; i++) {
+            divs[i].style.display = 'none';
+          }
+          document.getElementById(divId).style.display = 'block';
+        }
+      </script>
+      
+
+
+    
+</body>
+<script src="script.js"></script>
+</html>
