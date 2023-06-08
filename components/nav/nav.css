@@ -77,3 +77,8 @@
 .logo-text {
   font-weight: bold;
 }
+
+#profileLinks a {
+  color: #3661e3d2;
+  font-weight: bold;
+}
