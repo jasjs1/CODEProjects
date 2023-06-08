@@ -62,3 +62,14 @@
   vertical-align: middle;
   margin-top: -5px;
 }
+
+#profileLinks {
+  position: absolute;
+  float: right;
+  top: 35px;
+  right: 45px;
+  border: 2.5px solid #3662E3;
+  padding: 7px;
+  color: #3661e3de;
+  padding-right: 50px;
+}
