@@ -1,9 +1,9 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 module.exports = {
-  content: ["./index.html"],
+  purge: ["./src/**/*.html"], // Apply styles to all HTML files in the "src" directory
   theme: {
     extend: {},
   },
+  variants: {},
   plugins: [],
-}
-
+};
