@@ -1,0 +1,64 @@
+.menu-bar {
+  background-color: #FFFFFF;
+  padding: 10px 0;
+  color: black;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-image {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.menu-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  
+}
+
+.menu-items li {
+  margin-right: 20px;
+  margin-top: -10px;
+}
+
+.menu-items li:last-child {
+  margin-right: 0;
+}
+
+.menu-items li a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.menu-items li a:hover {
+  color: black;
+}
+
+.menu-items li a.active {
+  color: #3662E3;
+  font-weight: bold;
+}
+
+.menu-icon {
+  display: inline;
+  vertical-align: middle;
+  margin-top: -5px;
+}
