@@ -225,16 +225,15 @@ button {
   
   
   img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    overflow: hidden;
-    background-position: center;
-    background-size: cover;
-    text-indent: 100%; 
-    white-space: nowrap;
-    overflow: hidden;
+    width: 350px;
+    height: 120px;
+    margin-top: -20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 36%;
   }
+  
   
   input[type="email"] {
     background-color: #1c1f23;
@@ -275,4 +274,13 @@ padding: 15px;
 margin-top: -15px;
 font-weight: normal;
 color: #fff;
+}
+
+#signup-link {
+  font-size: 26px;
+}
+
+#login-link {
+  font-size: 26px;
+  margin-left: 20px;
 }
