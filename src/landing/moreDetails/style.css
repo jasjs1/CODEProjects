@@ -1,6 +1,6 @@
 body {
-    background-color: #1c1f23;
-    color: white;
+    background-color: #FFFFFF;
+    color: black;
     font-family: 'Open Sans', sans-serif;
     margin-left: 45px;
     margin-right: 45px;
@@ -8,38 +8,39 @@ body {
 
 
 .head {
-    color: #6466E9;
+    color: #3662E3;
+    font-size: 20px;
     font-weight: lighter;
 }
 
 input[type="text"] {
-    background-color: #1c1f23;
+    background-color: #FFFFFF;
     border: 1px solid;
-    border-color: #6466E9;
+    border-color: #3662E3;
     width: 1105px;
     height: 45px;
     border: 1px solid;
-    border-color: #6466E9;
+    border-color: #3662E3;
     border-radius: 5px;
     padding: 15px;
-    color: white;
+    color: black;
 }
 
 select {
     /* center selector */
-    background-color: #1c1f23;
+    background-color: #FFFFFF;
     border: 1px solid;
-    border-color: #6466E9;
+    border-color: #3662E3;
     width: 1105px;
     height: 45px;
-    color: white;
+    color: black;
     font-weight: normal;
     font-size: 14
     px;
     border-radius: 5px;
     border-width: 1px;
     border-style: solid;
-    border-color: #6466E9;
+    border-color: #3662E3;
     border-image: initial;
     border-image-slice: initial;
     border: 1px solid;
@@ -49,10 +50,11 @@ select {
 }
 
 button {
-    background-color: #1c1f23;
-    color: white;
+    background-color: #FFFFFF;
+    color: black;
     border: 1px solid;
-    border-color: #6466E9;
+    border-color: #3662E3;
     border-radius: 5px;
     padding: 15px;
+    margin-top: 15px;
 }
