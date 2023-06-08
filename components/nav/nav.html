@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="nav.css">
 <nav class="menu-bar">
   <div class="container">
@@ -8,7 +9,26 @@
     <ul class="menu-items">
       <li><a href="#" class="active">Learning</a></li>
       <li><a href="#">Feed</a></li>
-      <li><img src="/assets/svg/personSmile.svg" class="menu-icon"></li>
+      <li><img onclick="displayProfileRelatedLinks()" src="/assets/svg/personSmile.svg" class="menu-icon"></li>
     </ul>
   </div>
 </nav>
+
+<script>
+    function displayProfileRelatedLinks() {
+var divElement = document.getElementById('profileLinks');
+
+// Set the display property of the div element to "block"
+divElement.style.display = 'block';
+}
+
+function displayMediaMaker() {
+
+}
+  </script>
+
+<div id="profileLinks" class="profile-image-sub-container" style="display: none;">
+  <a href="http://127.0.0.1:5500/src/profile/profile.html">Profile</a>
+<br>
+    <a href="http://127.0.0.1:5500/src/landing/landing.html">Logout</a>
+  </div>
