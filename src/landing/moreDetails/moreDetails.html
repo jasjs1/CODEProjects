@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.svg" />
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Complete Account · CODEProjects</title>
+</head>
+<body>
+
+
+    <div class="head">
+        <h1 class="complete-account">CODEProjects | COMPLETE ACCOUNT</h2>
+        <h3>Add more details to your profile to make sure that it's diffrent than everyone elses. Make sure to input these fields correctly so you wont have to change them later. You can change them later in the Profile Settings button on the Profile page.</h3>
+    </div>
+
+    <div class="fields">
+      <p>Name</p>
+      <input type="text" id="signup-name" placeholder="your name" required>
+    
+      <p>Username:</p>
+      <input type="text" id="username" placeholder="@username.projects" required>
+    
+      <p>Tag</p>
+      <p>What's your primary programming language?</p>
+      <select id="tag" required>
+        <option>Select</option>
+          <option>ada</option>
+          <option>assembly</option>
+          <option>angular</option>
+          <option>bash</option>
+          <option>awk</option>
+          <option>c</option>
+          <option>c#</option>
+          <option>c++</option>
+          <option>clojure</option>
+          <option>cobol</option>
+          <option>coffeescript</option>
+          <option>commonlisp</option>
+          <option>crystal</option>
+          <option>css</option>
+          <option>dart</option>
+          <option>elixir</option>
+          <option>elm</option>
+          <option>erlang</option>
+          <option>f#</option>
+          <option>fortran</option>
+          <option>go</option>
+          <option>groovy</option>
+          <option>haskell</option>
+          <option>html</option>
+          <option>java</option>
+          <option>javascript</option>
+          <option>julia</option>
+          <option>kotlin</option>
+          <option>lua</option>
+          <option>matlab</option>
+          <option>objectivec</option>
+          <option>ocaml</option>
+          <option>pascal</option>
+          <option>perl</option>
+          <option>php</option>
+          <option>python</option>
+          <option>r</option>
+          <option>react</option>
+          <option>reactnative</option>
+          <option>ruby</option>
+          <option>rust</option>
+          <option>scala</option>
+          <option>scheme</option>
+          <option>sql</option>
+          <option>swift</option>
+          <option>typescript</option>
+      </select>
+    </div>
+
+    <p>Profile Description</p>
+    <input type="text" id="description-text" required minlength="3" maxlength="150">
+
+    <br>
+    
+    <button id="save">Add More Details</button>
+    
+    
+    <script>
+      const saveButton = document.querySelector('#save');
+      saveButton.addEventListener('click', function () {
+        const name = document.querySelector('#signup-name').value;
+        const username = document.querySelector('#username').value;
+        const tag = document.querySelector('#tag').value;
+        const description = document.querySelector('#description-text').value; // Added this line
+        
+        localStorage.setItem('signup-name', name);
+        localStorage.setItem('username', username);
+        localStorage.setItem('tag', tag);
+        localStorage.setItem('description', description); // Added this line
+      });
+    
+      // Rest of your existing code
+    </script>
+    
+    <script>
+      // Redirect to another page after saving
+      const redirectToApp = function () {
+        window.location.href = 'http://127.0.0.1:5500/.app/app.html';
+      };
+      saveButton.addEventListener('click', redirectToApp);
+    </script>
+    
+    
+    
+    
+</body>
+<script src="script.js"></script>
+
+</html>
