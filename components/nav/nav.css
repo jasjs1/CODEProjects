@@ -30,8 +30,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  
+  display: flex;  
 }
 
 .menu-items li {
@@ -73,4 +72,8 @@
   padding: 7px;
   color: #3661e3de;
   padding-right: 50px;
+}
+
+.logo-text {
+  font-weight: bold;
 }
