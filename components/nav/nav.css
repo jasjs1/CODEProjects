@@ -3,6 +3,10 @@
   padding: 10px 0;
   color: black;
   margin-left: -28px;
+  font-family: Arial, Helvetica, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 100; /* Add a z-index to ensure it appears on top of other elements */
 }
 
 .container {
@@ -30,12 +34,11 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;  
+  display: flex;
 }
 
 .menu-items li {
   margin-right: 20px;
-  margin-top: -10px;
 }
 
 .menu-items li:last-child {
@@ -64,10 +67,9 @@
 }
 
 #profileLinks {
-  position: absolute;
+  position: sticky;
+  top: 0;
   float: right;
-  top: 35px;
-  right: 45px;
   border: 2.5px solid #3662E3;
   padding: 7px;
   color: #3661e3de;
