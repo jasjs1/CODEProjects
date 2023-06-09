@@ -1,0 +1,87 @@
+
+body {
+    margin-left: 144px;
+}
+
+#profileLinks {
+    position: absolute;
+    float: right;
+    top: 35px;
+    right: 45px;
+    border: 2.5px solid #3662E3;
+    padding: 7px;
+    color: #3661e3de;
+    padding-right: 50px;
+}
+
+#create-project-text {
+    margin-top: -40px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #3662E3;
+}
+
+#create-project-text {
+    margin-top: 25px;
+}
+
+#red-asterisk {
+    color: red;
+} 
+
+input[type="text"] {
+    background-color: lightgray;
+    width: 600px;
+    color: black;
+    height: 36px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+textarea {
+    width: 600px;
+    height: 70px;
+    background-color: lightgray;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    padding: 10px;
+    background-color: #3662E3;
+    border-radius: 5px;
+    color: white;
+    margin-top: 20px;
+}
+
+input[type="file"] {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#formatting-buttons {
+    padding-left: 10px;
+}
+
+#add-title {
+    padding: 10px;
+    background-color: #3662E3;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+#add-sub-header {
+    padding: 10px;
+    background-color: #3662E3;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+#add-bold-paragraph {
+    padding: 10px;
+    background-color: #3662E3;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.svg" />
+    <link href="/dist/output.css" rel="stylesheet">
+    <link href="/components/nav/nav.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/components/markdownEditor/formatting.css"> <!-- For Markdown Editor -->
+    
+    <title>Create Project · CODEProjects</title>
+</head>
+<body>
+    <link rel="stylesheet" href="nav.css">
+    <iframe src="/components/nav/nav.html" style="width: 100%;"></iframe>
+
+    <div id="create-project">
+        <h2 id="create-project-text">Create a Project</h2>
+
+        <form onsubmit="createProject(event)">
+            <p>Project Title<span id="red-asterisk">*</span></p>
+            <input type="text" id="project-title" required>
+
+            <p>Project Description<span id="red-asterisk">*</span></p>
+            <input type="text" id="project-description" required>
+
+            <p>Project Cover Image<span id="red-asterisk">*</span></p>
+            <input type="file" id="project-cover" required>
+<br>
+            <input type="submit" value="Create Project">
+        </form>
+    </div>
+
+    <script>
+        function createProject(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const projectTitle = document.querySelector('#project-title').value;
+            const projectDescription = document.querySelector('#project-description').value;
+            const imageInput = document.getElementById('project-cover');
+            const file = imageInput.files[0];
+
+            if (projectTitle && projectDescription && file) {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+
+                reader.onload = function (event) {
+                    const imageDataUrl = event.target.result;
+
+                    localStorage.setItem('savedImage', imageDataUrl);
+                    console.log('Image saved to localStorage!');
+
+                    localStorage.setItem('projectTitle', projectTitle);
+                    localStorage.setItem('projectDescription', projectDescription);
+
+                    // You can choose to redirect to another page or perform other actions here
+                    console.alert('Project created successfully!');
+                };
+            } else {
+                alert('Please fill in all the required fields.');
+                console.error('Please fill in all the required fields.');
+            }
+        }
+    </script>
+</body>
+</html>
