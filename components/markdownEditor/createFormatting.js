@@ -11,20 +11,20 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-  function addTitle() {
+  function addH1() {
     const textarea = document.getElementById('project-content');
     textarea.value += '# ';
     textarea.style.fontSize = '18px';
     textarea.style.fontWeight = 'bold';
   }
 
-  function addSubHeader() {
+  function addH2() {
     const textarea = document.getElementById('project-content');
     textarea.value += '## ';
     textarea.style.fontSize = '16px';
   }
 
-  function addBoldParagraph() {
+  function addH3() {
     const textarea = document.getElementById('project-content');
     textarea.value += '###';
     textarea.style.fontSize = '14px';
