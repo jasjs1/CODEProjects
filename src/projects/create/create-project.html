@@ -30,41 +30,51 @@
 
             <p>Project Cover Image<span id="red-asterisk">*</span></p>
             <input type="file" id="project-cover" required>
-<br>
-            <input type="submit" value="Create Project">
+            <br>
+            <button type="submit">
+                <a href="https://www.google.com">Create Project</a>
+            </button>
+            
         </form>
+
+        <script>
+            function createProject(event) {
+                event.preventDefault(); // Prevent form submission
+
+                const projectTitle = document.querySelector('#project-title').value;
+                const projectDescription = document.querySelector('#project-description').value;
+                const imageInput = document.getElementById('project-cover');
+                const file = imageInput.files[0];
+
+                if (projectTitle && projectDescription && file) {
+                    const reader = new FileReader();
+                    reader.readAsDataURL(file);
+
+                    reader.onload = function (event) {
+                        const imageDataUrl = event.target.result;
+
+                        localStorage.setItem('savedImage', imageDataUrl);
+                        console.log('Image saved to localStorage!');
+
+                        localStorage.setItem('projectTitle', projectTitle);
+                        localStorage.setItem('projectDescription', projectDescription);
+
+                        // You can choose to redirect to another page or perform other actions here
+                        console.log('Project created successfully!');
+                        form.reset();
+                        location.href = 'https://www.google.com';
+                    };
+                } else {
+                    alert('Please fill in all the required fields.');
+                    console.error('Please fill in all the required fields.');
+                }
+            }
+        </script>
     </div>
 
-    <script>
-        function createProject(event) {
-            event.preventDefault(); // Prevent form submission
-
-            const projectTitle = document.querySelector('#project-title').value;
-            const projectDescription = document.querySelector('#project-description').value;
-            const imageInput = document.getElementById('project-cover');
-            const file = imageInput.files[0];
-
-            if (projectTitle && projectDescription && file) {
-                const reader = new FileReader();
-                reader.readAsDataURL(file);
-
-                reader.onload = function (event) {
-                    const imageDataUrl = event.target.result;
-
-                    localStorage.setItem('savedImage', imageDataUrl);
-                    console.log('Image saved to localStorage!');
-
-                    localStorage.setItem('projectTitle', projectTitle);
-                    localStorage.setItem('projectDescription', projectDescription);
-
-                    // You can choose to redirect to another page or perform other actions here
-                    console.alert('Project created successfully!');
-                };
-            } else {
-                alert('Please fill in all the required fields.');
-                console.error('Please fill in all the required fields.');
-            }
-        }
-    </script>
+    <script src="script.js"></script>
+    <script src="/components/markdownEditor/createFormatting.js"></script>
+    <script src="adaptSizeOfTextarea.js"></script>
+    <script src="createProject.js"></script>
 </body>
 </html>
