@@ -52,6 +52,8 @@
 
                 <br>
             </div>
+            <p>Demo Video - YouTube <span id="red-asterisk">*</span></p>
+            <input type="url" id="demo-video" required> 
 
             <p>Project Content <span id="red-asterisk">*</span></p>
             <textarea id="project-content"></textarea> <!-- THIS IS JUST TO SHOW THE RESULTS, YOU MAY REMOVE THIS IF YOU WANT. This can also be external (like in a different .html file.) -->
@@ -77,6 +79,8 @@
                 const file = imageInput.files[0];
                 const content = form.querySelector('#project-content').value;
                 const skillLevel = document.getElementById('skill-type').value.trim();
+                const YouTubeURLDemoVideo = document.querySelector('#demo-video').value.trim();
+
 
                 if (projectTitle && projectDescription && file) {
                     const reader = new FileReader();
@@ -90,6 +94,7 @@
                         localStorage.setItem('projectDescription', projectDescription);
                         localStorage.setItem('projectContent', content);
                         localStorage.setItem('skillLevel', skillLevel);
+                        localStorage.setItem('demoVideo', YouTubeURLDemoVideo);
 
                         // You can choose to redirect to another page or perform other actions here
                         console.log('Project created successfully!');
