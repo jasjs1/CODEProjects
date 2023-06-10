@@ -31,20 +31,38 @@
             <p>Project Cover Image<span id="red-asterisk">*</span></p>
             <input type="file" id="project-cover" required>
             <br>
-            <button id="submit" type="submit">
-                <a href="http://127.0.0.1:5500/src/projects/create/completeCreate/completeCreatingCourse.html">Create Project</a>
+
+            <div id="container">
+                <script src="/components/FontFlex/FontFlexComponents/scripts/createFormatting.js"></script>
+                <link rel="stylesheet" href="/components/FontFlex/FontFlexComponents/styles/formatting.css">
+                <script src="/src/projects/create/adaptSizeOfTextarea.js"></script>
+
+                <button id="FontFlex-formatting-button" onclick="addH1()">Add H1</button>
+                <button id="FontFlex-formatting-button" onclick="addH2()">Add H2</button>
+                <button id="FontFlex-formatting-button" onclick="addH3()">Add H3</button>
+                <button id="FontFlex-formatting-button" onclick="returnToNormalFont()">Return to Normal Font</button>
+
+                <br>
+            </div>
+
+            <textarea id="project-content"></textarea> <!-- THIS IS JUST TO SHOW THE RESULTS, YOU MAY REMOVE THIS IF YOU WANT. This can also be external (like in a diffrent .html file.) -->
+            <br>
+
+            <button id="submit" type="submit" onclick="window.location.href='http://127.0.0.1:5500/src/projects/createdProjectsHomePage/allProjects.html'">
+                Create Project
             </button>
-            
         </form>
 
         <script>
             function createProject(event) {
                 event.preventDefault(); // Prevent form submission
 
-                const projectTitle = document.querySelector('#project-title').value;
-                const projectDescription = document.querySelector('#project-description').value;
-                const imageInput = document.getElementById('project-cover');
+                const form = event.target; // Get the form element
+                const projectTitle = form.querySelector('#project-title').value;
+                const projectDescription = form.querySelector('#project-description').value;
+                const imageInput = form.querySelector('#project-cover');
                 const file = imageInput.files[0];
+                const content = form.querySelector('#project-content').value;
 
                 if (projectTitle && projectDescription && file) {
                     const reader = new FileReader();
@@ -58,11 +76,12 @@
 
                         localStorage.setItem('projectTitle', projectTitle);
                         localStorage.setItem('projectDescription', projectDescription);
+                        localStorage.setItem('projectContent', content);
 
                         // You can choose to redirect to another page or perform other actions here
                         console.log('Project created successfully!');
                         form.reset();
-                        location.href = 'http://127.0.0.1:5500/src/projects/create/completeCreate/completeCreatingCourse.html=';
+                        window.location.href = 'http://127.0.0.1:5500/src/projects/createdProjectsHomePage/allProjects.html';
                     };
                 } else {
                     alert('Please fill in all the required fields.');
@@ -73,8 +92,8 @@
     </div>
 
     <script src="script.js"></script>
-    <script src="/components/markdownEditor/createFormatting.js"></script>
-    <script src="adaptSizeOfTextarea.js"></script>
-    <script src="createProject.js"></script>
+    <script src="/components/FontFlex/FontFlexComponents/scripts/createFormatting.js"></script> 
+    <script src="/src/projects/create/adaptSizeOfTextarea.js"></script>
+    <script src="/components/FontFlex/FontFlexComponents/scripts/createFormatting.js"></script>
 </body>
 </html>
