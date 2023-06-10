@@ -15,7 +15,7 @@
     <title>Create Project · CODEProjects</title>
 </head>
 <body>
-    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="/components/nav/nav.css">
     <iframe src="/components/nav/nav.html" style="width: 100%;"></iframe>
 
     <div id="create-project">
@@ -32,23 +32,35 @@
             <input type="file" id="project-cover" required>
             <br>
 
+            <p>Skill Type<span id="red-asterisk">*</span></p>
+            <select id="skill-type">
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Expert">Expert</option>
+                <option value="Any Skill Level">Any Skill Level</option>
+            </select>
+
             <div id="container">
                 <script src="/components/FontFlex/FontFlexComponents/scripts/createFormatting.js"></script>
                 <link rel="stylesheet" href="/components/FontFlex/FontFlexComponents/styles/formatting.css">
                 <script src="/src/projects/create/adaptSizeOfTextarea.js"></script>
 
-                <button id="FontFlex-formatting-button" onclick="addH1()">Add H1</button>
-                <button id="FontFlex-formatting-button" onclick="addH2()">Add H2</button>
-                <button id="FontFlex-formatting-button" onclick="addH3()">Add H3</button>
-                <button id="FontFlex-formatting-button" onclick="returnToNormalFont()">Return to Normal Font</button>
+                <button class="FontFlex-formatting-button" onclick="addH1()">Add H1</button>
+                <button class="FontFlex-formatting-button" onclick="addH2()">Add H2</button>
+                <button class="FontFlex-formatting-button" onclick="addH3()">Add H3</button>
+                <button class="FontFlex-formatting-button" onclick="returnToNormalFont()">Return to Normal Font</button>
 
                 <br>
             </div>
 
-            <textarea id="project-content"></textarea> <!-- THIS IS JUST TO SHOW THE RESULTS, YOU MAY REMOVE THIS IF YOU WANT. This can also be external (like in a diffrent .html file.) -->
+            <textarea id="project-content"></textarea> <!-- THIS IS JUST TO SHOW THE RESULTS, YOU MAY REMOVE THIS IF YOU WANT. This can also be external (like in a different .html file.) -->
+            <br>
+            <div id="info">
+                <img src="/assets/svg/information.svg"><p>When you create a Project that goes to your profile, and is under your name. Make sure that this is a quality Project before creating.</p>
+            </div>
             <br>
 
-            <button id="submit" type="submit" onclick="window.location.href='http://127.0.0.1:5500/src/projects/createdProjectsHomePage/allProjects.html'">
+            <button id="submit" type="submit">
                 Create Project
             </button>
         </form>
@@ -63,6 +75,7 @@
                 const imageInput = form.querySelector('#project-cover');
                 const file = imageInput.files[0];
                 const content = form.querySelector('#project-content').value;
+                const skillLevel = document.getElementById('skill-type').value.trim();
 
                 if (projectTitle && projectDescription && file) {
                     const reader = new FileReader();
@@ -72,11 +85,10 @@
                         const imageDataUrl = event.target.result;
 
                         localStorage.setItem('savedImage', imageDataUrl);
-                        console.log('Image saved to localStorage!');
-
                         localStorage.setItem('projectTitle', projectTitle);
                         localStorage.setItem('projectDescription', projectDescription);
                         localStorage.setItem('projectContent', content);
+                        localStorage.setItem('skillLevel', skillLevel);
 
                         // You can choose to redirect to another page or perform other actions here
                         console.log('Project created successfully!');
