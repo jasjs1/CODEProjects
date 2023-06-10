@@ -35,7 +35,7 @@
               <h3 id="password-text">Password:</h3>
               <input type="password" name="signup-password" placeholder="your password" min="8" max="80" required>
           <br>
-              <input type="submit" value="Create Account" onclick="saveEmailAddress(event)" />
+              <a id="create-account-button" href="http://127.0.0.1:5500/src/landing/moreDetails/moreDetails.html" onclick="saveEmailAddress()">Create Account</a>
             </form>
           </div>
           
@@ -53,7 +53,7 @@
               console.log('Saving email address and password...');
               console.log('Saved email address:', email);
               console.log('Saved password:', password);
-              location.href = 'http://127.0.0.1:5500/account/login/moreDetails/more-details.html';
+              location.href = 'http://127.0.0.1:5500/src/landing/moreDetails/moreDetails.html';
             }
           }
           </script>
