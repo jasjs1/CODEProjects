@@ -38,6 +38,15 @@ input[type="text"] {
     font-size: 14px;
 }
 
+input[type="url"] {
+    background-color: lightgray;
+    width: 600px;
+    color: black;
+    height: 36px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
 #project-content {
     background-color: lightgray;
     color: inherit;
