@@ -29,6 +29,9 @@
       width: 800px;
       /* This is just for the purpose of fitting everything on one line. You may remove this styling. */
       font-family: Arial, Helvetica, sans-serif;
+      background-color: lightgray;
+      height: 700px;
+      width: 300px;
     }
 
     #FontFlex-formatting-button {
@@ -36,5 +39,4 @@
       color: white;
       padding: 9px;
       border-radius: 5px;
-      margin-bottom: 5px;
     }
