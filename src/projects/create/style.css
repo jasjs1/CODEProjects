@@ -38,11 +38,12 @@ input[type="text"] {
     font-size: 14px;
 }
 
-textarea {
-    width: 600px;
-    height: 70px;
+#project-content {
     background-color: lightgray;
-    border-radius: 5px;
+    color: inherit;
+    width: 600px;
+    /* height: 1100px; */
+    border-radius: 10px;
 }
 
 #submit {
@@ -85,3 +86,30 @@ input[type="file"] {
     color: white;
     margin-bottom: 10px;
 }
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 75px;
+
+  }
+  #container {
+    height: 100%;
+  }
+  #my-iframe {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  #FontFlex-formatting-button {
+    background-color: #3662E3;
+    color: white;
+    padding: 9px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
