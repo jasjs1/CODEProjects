@@ -150,3 +150,10 @@ html, body {
     border-radius: 5px;
     font-size: 14px;
   }
+
+  #table-of-contents {
+    height: 70px;
+    width: 600px;
+    background-color: lightgray;
+    border-radius: 10px;
+  }
