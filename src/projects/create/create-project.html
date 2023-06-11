@@ -70,6 +70,7 @@
             <option value="Java">Java</option>
             <option value="JavaScript">JavaScript</option>
             <option value="Julia">Julia</option>
+            <option value="Jupyter Notebook">Jupyter Notebook</option>
             <option value="Kotlin">Kotlin</option>
             <option value="Lua">Lua</option>
             <option value="Objective-C">Objective-C</option>
@@ -90,7 +91,10 @@
             <option value="Swift & SwiftUI">Swift & SwiftUI</option>
             <option value="TypeScript">TypeScript</option>
           </select>
-    
+
+          <p>Table of Contents <span id="red-asterisk">*</p>
+          <textarea id="table-of-contents" required></textarea>
+     
           <p>Project Content <span id="red-asterisk">*</span></p>
           <textarea id="project-content"></textarea>
           <br>
@@ -120,6 +124,7 @@
           const requiredSkills = Array.from(document.getElementById('required-skills').options)
             .filter(option => option.selected)
             .map(option => option.value.trim());
+          const tableOfContents = document.querySelector('#table-of-contents').value;
     
           if (projectTitle && projectDescription && file) {
             const reader = new FileReader();
@@ -135,6 +140,7 @@
               localStorage.setItem('skillLevel', skillLevel);
               localStorage.setItem('demoVideo', YouTubeURLDemoVideo);
               localStorage.setItem('requiredSkills', JSON.stringify(requiredSkills));
+              localStorage.setItem('tableOfContents', tableOfContents);
     
               // You can choose to redirect to another page or perform other actions here
               console.log('Project created successfully!');
