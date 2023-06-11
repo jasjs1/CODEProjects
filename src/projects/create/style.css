@@ -51,7 +51,7 @@ input[type="url"] {
     background-color: lightgray;
     color: inherit;
     width: 600px;
-    /* height: 1100px; */
+    height: 800px;
     border-radius: 10px;
     padding: 2px;
 }
@@ -142,3 +142,11 @@ html, body {
     font-weight: bold;
   }
   
+  #required-skills {
+    background-color: lightgray;
+    width: 600px;
+    color: black;
+    height: 140px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
