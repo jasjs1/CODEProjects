@@ -74,6 +74,7 @@
   padding: 7px;
   color: #3661e3de;
   padding-right: 50px;
+  font-family: inherit;
 }
 
 .logo-text {
@@ -83,4 +84,5 @@
 #profileLinks a {
   color: #3661e3d2;
   font-weight: bold;
+  font-family: inherit;
 }
