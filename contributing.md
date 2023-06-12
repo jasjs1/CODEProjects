@@ -16,6 +16,7 @@ If you do not follow these rules, the conribution may not be pushed into the pro
 * Styling/CSS/Tailwind issues
 * JavaScript issues
 * HTML issues
+* Markdown issues
 * Anything that looks "off"
 * Anything else except what is listed in the "Whats not Allowed?" section
 
