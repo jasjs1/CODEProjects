@@ -97,3 +97,29 @@
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+
+#createContent {
+  position: sticky;
+  top: 0;
+  float: right;
+  border: 2.5px solid #3662E3;
+  padding: 7px;
+  right: 10%;
+  color: #3661e3de;
+  padding-right: 50px;
+  font-family: inherit;
+  box-shadow: 0.5px 0.5px 0.5px #3662E3;
+}
+
+.logo-text {
+  font-weight: bold;
+}
+
+#createContent a {
+  color: #3661e3d2;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
