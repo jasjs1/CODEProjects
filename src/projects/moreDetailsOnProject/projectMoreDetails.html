@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.svg" />
+    <link href="/dist/output.css" rel="stylesheet">
+    <link href="/components/nav/nav.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <title></title>
+</head>
+<body>
+    <iframe src="/components/nav/nav.html" style="width: 100%;"></iframe>
+
+    <div id="created-projects">
+        <div id="project-title"></div>
+        <div id="project-image"></div>
+        <div id="project-skill-level">Skill Level:</div>
+        <h3 id="required-skills-h3">Required Skills:</h3>
+        <div id="required-skills"></div>
+    </div>
+
+    <div id="interact-buttons">
+        <button id="joinProject" onclick="toggleButtonText()">GET PROJECT — FREE</button>
+    </div>
+
+    <h3 id="description-text">Description:</h3>
+    <p id="project-description"></p>
+
+    <script>
+        // Load existing project details from local storage
+        const projectTitle = localStorage.getItem('projectTitle');
+        const skillLevel = localStorage.getItem('skillLevel');
+        const savedImage = localStorage.getItem('savedImage');
+        const projectDescription = localStorage.getItem('projectDescription');
+
+        // Access the elements
+        const projectImageContainer = document.getElementById('project-image');
+        const projectTitleContainer = document.getElementById('project-title');
+        const skillLevelContainer = document.getElementById('project-skill-level');
+        const projectDescriptionContainer = document.getElementById('project-description');
+        const requiredSkillsContainer = document.getElementById('required-skills');
+
+        // Render project details
+        if (projectTitle && skillLevel && savedImage) {
+            const imageElement = document.createElement('img');
+            imageElement.src = savedImage;
+            projectImageContainer.appendChild(imageElement);
+
+            const titleElement = document.createElement('h2');
+            titleElement.textContent = projectTitle;
+            projectTitleContainer.appendChild(titleElement);
+
+            const skillLevelElement = document.createElement('p');
+            skillLevelElement.textContent = `Skill Level: ${skillLevel}`;
+            skillLevelContainer.appendChild(skillLevelElement);
+        } else {
+            const noDetailsElement = document.createElement('p');
+            noDetailsElement.textContent = 'No project details found.';
+            skillLevelContainer.appendChild(noDetailsElement);
+        }
+
+        // Render project description
+        if (projectDescription) {
+            const descriptionElement = document.createElement('p');
+            descriptionElement.textContent = projectDescription;
+            projectDescriptionContainer.appendChild(descriptionElement);
+        } else {
+            const noDescriptionElement = document.createElement('p');
+            noDescriptionElement.textContent = 'No project description available.';
+            projectDescriptionContainer.appendChild(noDescriptionElement);
+        }
+
+        // Retrieve the JSON data from localStorage
+        const requiredSkillsData = localStorage.getItem('requiredSkills');
+
+        // Parse the JSON data into a JavaScript object
+        const requiredSkills = JSON.parse(requiredSkillsData);
+
+        // Create an unordered list to display the skills
+        const ul = document.createElement('ul');
+
+        // Iterate through each skill and create list items
+        requiredSkills.forEach(function (skill, index) {
+            const li = document.createElement('li');
+            li.textContent = skill;
+
+            // Apply a CSS class to alternate list items
+            if (index % 2 === 0) {
+                li.classList.add('even');
+            } else {
+                li.classList.add('odd');
+            }
+
+            ul.appendChild(li);
+        });
+
+        // Append the unordered list to the required-skills element
+        requiredSkillsContainer.appendChild(ul);
+
+        // Button click event handler
+        function toggleButtonText() {
+            const button = document.getElementById('joinProject');
+            button.innerText = 'Already Purchased -- Open Project';
+            localStorage.setItem('projectEnrollStatus', button.innerText);
+            window.location.href = 'http://127.0.0.1:5500/src/projects/projectContent/projectContent.html';
+        }
+
+        // Check if the project has already been purchased
+        const projectEnrollStatus = localStorage.getItem('projectEnrollStatus');
+        if (projectEnrollStatus) {
+            const button = document.getElementById('joinProject');
+            button.innerText = projectEnrollStatus;
+        }
+    </script>
+
+    <script src="script.js"></script>
+    <script src="displayProjectDetails.js"></script>
+</body>
+</html>

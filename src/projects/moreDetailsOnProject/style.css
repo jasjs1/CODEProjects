@@ -1,0 +1,113 @@
+#project-title {
+    font-weight: bold;
+    font-size: 2.25rem;
+    text-align: center;
+    word-wrap: break-word;
+  }
+
+  #created-projects img {
+    max-width: 100%;
+    height: 440px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #project-skill-level {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 20px;
+  }
+
+    #created-projects {
+        align-items: center;
+        transform: translate(50%);
+        padding: 20px;
+        border: 1.5px solid #E5E7EB;
+        border-radius: 10px;
+        -webkit-box-shadow: 0 0 10px #fff;
+        box-shadow: 1 1 10px #EBE8F6;
+        margin-top: -52px;
+        width: 50%;
+    }
+
+    .even {
+        background-color: #9FECB1;
+        color: black;
+        border-radius: 10px;
+        font-weight: bold;
+        width: 38%;
+        padding: 15px;
+      }
+      
+      /* Style for odd list items */
+      .odd {
+        background-color: #F9D923;
+        color: black;
+        border-radius: 10px;
+        font-weight: bold;
+      }
+
+      #required-skills {
+        display: flex;
+        flex-wrap: nowrap;
+        font-size: 15px;
+        color: black;
+      }
+      
+      #required-skills ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        padding: 12px;
+        color: black;
+      }
+      
+      #required-skills li {
+        margin-right: 10px;
+        padding: 12px;
+        color: #F0A9BB;
+        color: black;
+        border-radius: 10px;
+        font-weight: bold;
+      }
+      
+      #required-skills-h3 {
+        font-size: 21px;
+        font-weight: bold;
+        margin-top: 8px;
+      } 
+
+      #joinProject {
+        background-color: #3662E3;
+        color: white;
+        width: 46%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+        padding: 18px;
+        font-size: 23.5px;
+        font-weight: bold;
+        border-radius: 10px;
+        box-shadow: 1px 1px 10px #3662E3;
+        border-radius: 50px;
+        text-align: center;
+        margin-top: 12px;
+        margin-left: 26.86%;
+    }
+    
+
+      #project-description {
+        margin-left: 26%;
+        margin-right: 26%;
+        margin-top: 25px;
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+
+      #description-text {
+        margin-left: 26.86%;
+      }
