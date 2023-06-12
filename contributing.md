@@ -7,7 +7,7 @@ If you do not follow these rules, the conribution may not be pushed into the pro
 1. Fork this repository
 2. Do your change
 3. Create a PR (Pull Request) of your change
-   -> Call it CHANGE, FIX - [title]
+    * Call it CHANGE, FIX - [title]
 
 
 ## What is Allowed?
@@ -22,6 +22,6 @@ If you do not follow these rules, the conribution may not be pushed into the pro
 
 ## Whats not Allowed?
 * New features (unless help is specified, via the issues tab)
-   -> Add your self to the Issue and then leave a commment to what you can work on.
-
+    * Add your self to the Issue and then leave a commment to what you can work on.
+ 
 If you do go through with a contribution, thank you for your help!
