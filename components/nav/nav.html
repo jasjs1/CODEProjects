@@ -9,7 +9,8 @@
     <ul class="menu-items">
       <li><a href="#" class="active">Learning</a></li>
       <li><a href="#">Feed</a></li>
-      <li><img id="plus-icon" onclick="displayCreateContent()" src="/assets/svg/plus.svg" class="menu-icon"></li>
+      <li><img id="plus-icon" onclick="displayProfileRelatedLinks()" src="/assets/svg/plus.svg" class="menu-icon"></li>
+
       <li><img onclick="displayProfileRelatedLinks()" src="/assets/svg/personSmile.svg" class="menu-icon"></li>
     </ul>
   </div>
@@ -23,17 +24,24 @@
     divElement.style.display = 'block';
   }
 
-  function displayCreateContent() {
-    var divElement = document.getElementById('createContent');
+  function displayProfileRelatedLinks() {
+  var profileSelector = document.getElementById("createContent");
+  var plusIcon = document.getElementById("plus-icon");
 
-    // Set the display property of the div element to "block"
-    divElement.style.display = 'block';
+  if (profileSelector.style.display === "none") {
+    profileSelector.style.display = "block";
+    plusIcon.src = "/assets/svg/plus.svg"; // Change the image source to the minus icon
+  } else {
+    profileSelector.style.display = "none";
+    plusIcon.src = "/assets/svg/plus.svg"; // Change the image source back to the plus icon
   }
+}
   
 </script>
 
 <div id="createContent" class="content-image-sub-container" style="display: none;">
-  <a href="http://127.0.0.1:5500/src/projects/create/create-project.html" style="display: none;" target="_parent">Project</a>
+  <a href="http://127.0.0.1:5500/src/projects/create/create-project.html" target="_parent">Project</a>
+
 </div>
 
 <div id="profileLinks" class="profile-image-sub-container" style="display: none;">
