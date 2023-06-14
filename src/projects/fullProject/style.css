@@ -71,28 +71,29 @@
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: 125%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.716);
 }
-
 #openModal {
   position: fixed;
-  float: left;
-  top: 745px;
-  left: 975px;
-  inline-size: 473px;
-  transform: translate(50%);
+  top: calc(25.9% + 15px);
+  left: calc(2% + 32%);
+  transform: translateX(-50%);
   color: white;
   text-align: center;
-  width: 50%;
+  width: 30%;
   padding: 18px;
   font-weight: bold;
   border-radius: 10px;
   background-color: #3662e3;
   border: 2px solid #3662e3;
-  width: 24%;
+  margin-left: 815px;
+  margin-top: 51px;
 }
+
+
+
 
 #modalContent {
   background-color: #fff;
@@ -101,8 +102,8 @@
   border: 1px solid #888;
   width: 100%;
   max-width: 800px;
-  height: 355px;
-  max-height: 355px;
+  height: 395px;
+  max-height: 395px;
   position: relative;
 }
 
@@ -196,4 +197,27 @@ input[type="submit"] {
     border-radius: 10px;
     border: 2px solid #3662e3;
     transform: translate(50%);
+}
+
+#info {
+  display: flex;
+  align-items: center;
+  color: #3662E3;
+  font-weight: bold;
+}
+
+#info img {
+  width: 46px;
+  height: 46px;
+  font-weight: bold;
+}
+
+#questions {
+  position: fixed;
+  float: left;
+  top: 445px;
+  left: 975px;
+  inline-size: 473px;
+  transform: translate(50%);
+  text-align: left;
 }
