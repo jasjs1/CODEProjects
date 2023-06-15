@@ -38,8 +38,7 @@
  
 
 
-  <button id="openTableOfContents" onclick="toggleTableOfContents()">Table of Contents</button>
-
+      <button id="openTableOfContents" onclick="toggleTableOfContents()">Table of Contents</button>
       <button id="openQuestions" onclick="toggleQuestions()">Quesitons</button>
       <button id="openModal">Create a Question</button>
       
@@ -171,6 +170,15 @@
                 <h3 id="question-asker">${asker}</h3>
                 <h2 id="question-title">${post.title}</h2>
                 <h3 id="question-description">${post.description}</h3>
+                <div id="vote">
+                    <div id="upvote">
+                      <img src="/assets/svg/questions/upvote/upvote.svg" width="16px" height="16px" onclick="upvoteQuestion()">
+                    </div>
+
+                    <div id="downvote">
+                      <img src="/assets/svg/questions/downvote/downvote.svg" width="16px" height="16px" onclick="upvoteQuestion()">
+                    </div>
+                </div>
               </div>
             `;
 
@@ -178,8 +186,17 @@
             postsContainer.appendChild(postElement);
           }
         }
+
+
       </script>
     </div>
+
+    <script>
+              function upvoteQuestion() {
+                var image = document.getElementById("upvoteImage");
+                image.src = "/assets/svg/questions/upvote/upvoteClicked.svg";
+            }
+    </script>
 
 
     <script src="script.js"></script>
