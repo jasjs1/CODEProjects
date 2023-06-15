@@ -274,4 +274,6 @@ input[type="submit"] {
 
 #question-description {
   font-weight: light;
+  word-wrap: break-word;
+  margin-right: 15%;
 }
