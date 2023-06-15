@@ -1,2 +1,2 @@
 const projectTitle = localStorage.getItem('projectTitle');
-document.title = projectTitle + ' · CODEProjects'
+document.title = projectTitle + ' · Project CODEProjects'
