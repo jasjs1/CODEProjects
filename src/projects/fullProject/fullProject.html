@@ -1,197 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon.svg" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/favicon.svg"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/assets/favicon.svg"
-    />
-    <link href="/dist/output.css" rel="stylesheet" />
-    <link href="/components/nav/nav.css" rel="stylesheet" />
-    <link href="/components/CODEProjectsTextStyling.css" rel="stylesheet" />
-    <link href="style.css" rel="stylesheet" />
-    <title></title>
-  </head>
-  <body>
-    <iframe src="/components/nav/nav.html" style="width: 100%"></iframe>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.svg" />
+  <link href="/dist/output.css" rel="stylesheet" />
+  <link href="/components/nav/nav.css" rel="stylesheet" />
+  <link href="/components/CODEProjectsTextStyling.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+  <title></title>
+</head>
+<body>
+  <iframe src="/components/nav/nav.html" style="width: 100%"></iframe>
 
-    <div id="project-title"></div>
-    <div id="project-content">
+  <div id="project-title"></div>
+  <div id="project-content">
+    <script>
+      const projectTitle = localStorage.getItem("projectTitle");
+      const projectContent = localStorage.getItem("projectContent");
+      const projectContainerElement = document.getElementById("project-content");
+      const projectTitleElement = document.getElementById("project-title");
+
+      // Render project details
+      if (projectTitle && projectContent) {
+        const titleElement = document.createElement("h2");
+        titleElement.textContent = projectTitle;
+        projectTitleElement.appendChild(titleElement);
+
+        const contentElement = document.createElement("div");
+        contentElement.textContent = projectContent;
+        projectContainerElement.appendChild(contentElement);
+      }
+    </script>
+  </div>
+ 
+
+
+  <button id="openTableOfContents" onclick="toggleTableOfContents()">Table of Contents</button>
+
+      <button id="openQuestions" onclick="toggleQuestions()">Quesitons</button>
+      <button id="openModal">Create a Question</button>
+      
+
       <script>
-        const projectTitle = localStorage.getItem("projectTitle");
-        const projectContent = localStorage.getItem("projectContent");
-        const projectContainerElement =
-          document.getElementById("project-content");
-        const projectTitleElement = document.getElementById("project-title");
+  function toggleTableOfContents() {
+    const tableOfContents = document.getElementById("table-of-contents");
 
-        // Render project details
-        if (projectTitle && projectContent) {
-          const titleElement = document.createElement("h2");
-          titleElement.textContent = projectTitle;
-          projectTitleElement.appendChild(titleElement);
+    if (tableOfContents.style.display === "none") {
+      tableOfContents.style.display = "block";
+    } else {
+      tableOfContents.style.display = "none";
+    }
+  }
 
-          const contentElement = document.createElement("div");
-          contentElement.textContent = projectContent;
-          projectContainerElement.appendChild(contentElement);
+
+  function toggleQuestions() {
+    const questions = document.getElementById("questions");
+
+    if (questions.style.display === "none") {
+      questions.style.display = "block";
+    } else {
+      questions.style.display = "none";
+    }
+  }
+      </script>
+    </div>
+  </div>
+
+  <div id="tab-sub-content">
+    <div id="table-of-contents" style="display: none">
+      <div class="contents" id="contents"></div>
+      <script>
+        const tableOfContentsDisplay = document.getElementById("contents");
+        const tableOfContents = localStorage.getItem("tableOfContents");
+
+        if (tableOfContents) {
+          tableOfContentsDisplay.textContent = tableOfContents;
         }
       </script>
     </div>
 
-    <div id="sidebar">
-      <div id="tabs">
-        <h2
-          onclick="toggleTableOfContents()"
-          id="table-of-contents-text"
-          class="tab-text"
-        >
-          Table of Contents
-        </h2>
-        <h2 onclick="toggleQuestions()" id="questions-text" class="tab-text">
-          Questions
+    <div id="questions" style="display: none"></div>
+
+    <div id="modalContainer">
+      <div id="modalContent">
+        <span id="closeModal">&times;</span>
+        <h2 class="modal-h2" id="CODEProjectsH2">
+          Create a Question for the Project <span id="projectTitle"></span>
         </h2>
 
-        <script>
-          function toggleTableOfContents() {
-            const tableOfContents =
-              document.getElementById("table-of-contents");
-            const tableOfContentsText = document.getElementById(
-              "table-of-contents-text"
-            );
-            const questions = document.getElementById("questions");
-            const questionsText = document.getElementById("questions-text");
+        <form id="createQuestionForm">
+          <p>Question Title: <span id="red-astrisk">*</span></p>
+          <input type="text" id="question-title" required />
+          <br />
+          <p>Question Description:<span id="red-astrisk">*</span></p>
+          <input type="text" id="question-description" required />
+          <br />
+          <input type="submit" value="Create Question" />
 
-            if (tableOfContents.style.display === "none") {
-              tableOfContents.style.display = "block";
-              tableOfContentsText.style.fontWeight = "bold";
-              questions.style.display = "none";
-              questionsText.style.fontWeight = "normal";
-            } else {
-              tableOfContents.style.display = "block";
-              tableOfContentsText.style.fontWeight = "bold";
-              questions.style.display = "none";
-              questionsText.style.fontWeight = "normal";
-            }
-          }
-
-          function toggleQuestions() {
-            const tableOfContents =
-              document.getElementById("table-of-contents");
-            const tableOfContentsText = document.getElementById(
-              "table-of-contents-text"
-            );
-            const questions = document.getElementById("questions");
-            const questionsText = document.getElementById("questions-text");
-
-            if (questions.style.display === "none") {
-              questions.style.display = "block";
-              questionsText.style.fontWeight = "bold";
-              tableOfContents.style.display = "none";
-              tableOfContentsText.style.fontWeight = "normal";
-            } else {
-              questions.style.display = "none";
-              questionsText.style.fontWeight = "normal";
-            }
-          }
-        </script>
+          <div id="info">
+            <img src="/assets/svg/information.svg">
+            <p>Write clear, understandable questions for others.</p>
+          </div>
+        </form>
       </div>
     </div>
 
-    <div id="tab-sub-content">
-      <div id="table-of-contents" style="display: none">
-        <div class="contents" id="contents"></div>
-        <script>
-          const tableOfContentsDisplay = document.getElementById("contents");
-          const tableOfContents = localStorage.getItem("tableOfContents");
+    <script>
+      // Get the button and modal container elements
+      const openModalBtn = document.getElementById("openModal");
+      const modalContainer = document.getElementById("modalContainer");
 
-          if (tableOfContents) {
-            tableOfContentsDisplay.textContent = tableOfContents;
+      // Add a click event listener to the button
+      openModalBtn.addEventListener("click", function () {
+        modalContainer.style.display = "block";
+      });
+
+      // Get the close button element
+      const closeModalBtn = document.getElementById("closeModal");
+
+      // Add a click event listener to the close button
+      closeModalBtn.addEventListener("click", function () {
+        modalContainer.style.display = "none";
+      });
+    </script>
+
+    <img id="no-questions-image" src="/assets/svg/noQuestionsFound.svg" />
+
+    <script>
+      // Check if there are questions in the local storage
+      if (!localStorage.getItem("questions")) {
+        // Show the "No Questions Found" image and text
+        const image = document.getElementById("no-questions-image");
+        image.style.display = "block";
+        const textH2 = document.getElementById("CODEProjectsH2");
+        textH2.style.display = "block";
+      } else {
+        // Hide the "No Questions Found" image and text
+        const image = document.getElementById("no-questions-image");
+        image.style.display = "none";
+        const textH2 = document.getElementById("CODEProjectsH2");
+        textH2.style.display = "none";
+      }
+    </script>
+
+    <div id="questions">
+      <script>
+        const form = document.querySelector("#createQuestionForm");
+        const postsContainer = document.getElementById("questions");
+
+        // Load existing posts from local storage
+        const savedPosts = JSON.parse(localStorage.getItem("questions")) || [];
+
+        // Render existing posts
+        if (savedPosts.length) {
+          savedPosts.reverse(); // Reverse the order of savedPosts to display the latest posts first
+          for (let i = 0; i < savedPosts.length; i++) {
+            const post = savedPosts[i];
+
+            // Create a new post element
+            const postElement = document.createElement("div");
+            postElement.classList.add("post");
+
+            const asker = localStorage.getItem("signup-name");
+
+            postElement.innerHTML = `
+              <div id="question-layout">
+                <h3 id="question-asker">${asker}</h3>
+                <h2 id="question-title">${post.title}</h2>
+                <h3 id="question-description">${post.description}</h3>
+              </div>
+            `;
+
+            // Append the post element to the container
+            postsContainer.appendChild(postElement);
           }
-        </script>
-      </div>
-
-      <div id="questions" style="display: none">
-        <button id="openModal">Create a Question</button>
-
-        <div id="modalContainer">
-          <div id="modalContent">
-            <span id="closeModal">&times;</span>
-            <h2 class="modal-h2" id="CODEProjectsH2">
-              Create a Question for the Project <span id="projectTitle"></span>
-            </h2>
-
-            <form id="createQuestionForm">
-                <p>Question Title: <span id="red-astrisk">*</span></p>
-                <input type="text" id="question-title" required />
-                <br />
-                <p>Question Description:<span id="red-astrisk">*</span></p>
-                <input type="text" id="question-description" required />
-                <br />
-                <input type="submit" value="Create Question" />
-            </form>
-
-          </div>
-        </div>
-
-        <script>
-          // Get the button and modal container elements
-          const openModalBtn = document.getElementById("openModal");
-          const modalContainer = document.getElementById("modalContainer");
-
-          // Add a click event listener to the button
-          openModalBtn.addEventListener("click", function () {
-            modalContainer.style.display = "block";
-          });
-
-          // Get the close button element
-          const closeModalBtn = document.getElementById("closeModal");
-
-          // Add a click event listener to the close button
-          closeModalBtn.addEventListener("click", function () {
-            modalContainer.style.display = "none";
-          });
-        </script>
-
-<img id="no-questions-image" src="/assets/svg/noQuestionsFound.svg" />
-
-<script>
-  // Check if there are questions in the local storage
-  if (!localStorage.getItem("questions")) {
-    // Show the "No Questions Found" image and text
-    var image = document.getElementById("no-questions-image");
-    image.style.display = "block";
-    var textH2 = document.getElementById("CODEProjectsH2");
-    textH2.style.display = "block";
-    var textH3 = document.getElementById("CODEProjectsH3");
-    textH3.style.display = "block";
-  } else {
-    // Hide the "No Questions Found" image and text
-    var image = document.getElementById("no-questions-image");
-    image.style.display = "none";
-    var textH2 = document.getElementById("CODEProjectsH2");
-    textH2.style.display = "none";
-    var textH3 = document.getElementById("CODEProjectsH3");
-    textH3.style.display = "none";
-  }
-</script>
-
-<h2 class="no-questions-text" id="CODEProjectsH2">
-  End of the Questions
-</h2>
+        }
+      </script>
+    </div>
 
 
     <script src="script.js"></script>
     <script src="getProjectInfo.js"></script>
     <script src="questions.js"></script>
     <script src="createQuestion.js"></script>
-  </body>
+  </div>
+</body>
 </html>
