@@ -100,8 +100,9 @@
   width: 100%;
   max-width: 800px;
   height: 455px;
-  max-height: 455px;
+  max-height: 585px;
   position: relative;
+  max-height: 585px;
 }
 
 #closeModal {
@@ -283,7 +284,8 @@ input[type="submit"] {
   display: none;
 }
 
-  input[type="code"] {  margin-top: 10px;
+  #code { 
+     margin-top: 10px;
   background-color: #1c1f23;
   margin-bottom: 10px;
   border: 2.25px solid #3662e3;

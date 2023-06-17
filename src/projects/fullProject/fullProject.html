@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/asset s/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.svg" />
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.svg" />
   <link href="/dist/output.css" rel="stylesheet" />
@@ -37,36 +37,11 @@
   </div>
  
 
+  <button id="openTableOfContents" onclick="toggleTableOfContents()">Table of Contents</button>
+  <button id="openQuestions" onclick="toggleQuestions()">Questions</button>
+  <button id="openModal">Create a Question</button>
 
-      <button id="openTableOfContents" onclick="toggleTableOfContents()">Table of Contents</button>
-      <button id="openQuestions" onclick="toggleQuestions()">Quesitons</button>
-      <button id="openModal">Create a Question</button>
-      
-
-      <script>
-  function toggleTableOfContents() {
-    const tableOfContents = document.getElementById("table-of-contents");
-
-    if (tableOfContents.style.display === "none") {
-      tableOfContents.style.display = "block";
-    } else {
-      tableOfContents.style.display = "none";
-    }
-  }
-
-
-  function toggleQuestions() {
-    const questions = document.getElementById("questions");
-
-    if (questions.style.display === "none") {
-      questions.style.display = "block";
-    } else {
-      questions.style.display = "none";
-    }
-  }
-      </script>
-    </div>
-  </div>
+  <!-- <div id="questions" style="display: none;">Hello</div> -->
 
   <div id="tab-sub-content">
     <div id="table-of-contents" style="display: none">
@@ -97,8 +72,10 @@
           <p>Question Description:<span id="red-astrisk">*</span></p>
           <input type="text" id="question-description" required />
           <br />
+          <p>Code:</p>
+          <textarea id="code" placeholder="If your question involves issues with code, it is recommended to paste code here. If not, leave it empty."></textarea>
+          <br>
           <input type="submit" value="Create Question" />
-
           <div id="info">
             <img src="/assets/svg/information.svg">
             <p>Write clear, understandable questions for others.</p>
@@ -106,7 +83,54 @@
         </form>
       </div>
     </div>
+    
+    <script>
+      // Get the form element
+      const form = document.getElementById("createQuestionForm");
 
+      // Add an event listener to the form's submit event
+      form.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+
+        // Get the input values
+        const titleInput = document.getElementById("question-title");
+        const descriptionInput = document.getElementById("question-description");
+        const buggedCodeInput = document.getElementById("code");
+        let noProvidedCode = buggedCodeInput.value;
+        if (noProvidedCode.trim() === "") {
+          noProvidedCode = "No Code Provided";
+        }
+
+        // Create an object to store the form data
+        const question = {
+          title: titleInput.value,
+          description: descriptionInput.value,
+          providedCode: noProvidedCode,
+        };
+
+        // Check if there are already saved questions in the local storage
+        let savedQuestions = localStorage.getItem("questions");
+        if (savedQuestions) {
+          savedQuestions = JSON.parse(savedQuestions);
+        } else {
+          savedQuestions = [];
+        }
+
+        // Add the new question to the array of saved questions
+        savedQuestions.push(question);
+
+        // Save the updated questions to the local storage
+        localStorage.setItem("questions", JSON.stringify(savedQuestions));
+
+        // Reset the form inputs
+        titleInput.value = "";
+        descriptionInput.value = "";
+
+        // Your remaining JavaScript code here...
+
+      });
+    </script>
+    
     <script>
       // Get the button and modal container elements
       const openModalBtn = document.getElementById("openModal");
@@ -125,7 +149,6 @@
         modalContainer.style.display = "none";
       });
     </script>
-
 
     <script>
       // Check if there are questions in the local storage
@@ -170,7 +193,6 @@
                 <h2 id="question-title">${post.title}</h2>
                 <h3 id="question-description">${post.description}</h3>
                 <input type="text" id="answer-input" placeholder="Give the answer to this Question" required>
-                </div>
               </div>
             `;
 
@@ -182,8 +204,6 @@
 
       </script>
     </div>
-
-
 
     <script src="script.js"></script>
     <script src="getProjectInfo.js"></script>
