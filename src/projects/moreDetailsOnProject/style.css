@@ -111,3 +111,27 @@
       #description-text {
         margin-left: 26.86%;
       }
+
+      #project-description-following {
+        margin-left: 26%;
+        margin-right: 26%;
+        margin-top: 35px;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        }
+
+        #happy-learning {
+          margin-left: 26%;
+          margin-right: 26%;
+          margin-top: 10px;
+          font-size: 1.25rem;
+          line-height: 2rem;
+        }
+
+        #happy-learning2 {
+          margin-left: 26%;
+          margin-right: 26%;
+          margin-top: 5px;
+          font-size: 1.25rem;
+          line-height: 2rem;
+        }
