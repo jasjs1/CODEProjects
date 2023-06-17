@@ -1,287 +1,134 @@
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
 body {
-  background-color: #1c1f23;
-  color: white;
+  
+}
+
+h1 {
+  margin-bottom: 8%;
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
-}
-
-.topnav {
-  background-color: #1c1f23;
-  overflow: hidden;
-  text-align: center;
-  align-items: center;
-}
-
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  text-align: center;
-  align-items: center;
-}
-
-
-.topnav a:hover {
-  background-color: #6466E9;
-  color: black;
-  font-weight: bolder;
-  text-align: center;
-  align-items: center;
-}
-
-.topnav a.active {
-  /* background-color: #6466E9; */
-  color: white;
-  text-align: center;
-  text-align: center;
-  align-items: center;
-}
-
-
-.hi {
-  color: #6466E9;
-  font-weight: 100;
-  font-size: 20px;
-
-}
-
-.why-programmer-netlink-header {
-  color: white;
-  font-weight: bolder;
-  margin-top: 100px;
-  padding-bottom: 10px;
-}
-
-.vertical-box {
-  display: inline-block; /* makes the box display as an inline element */
-  max-width: 1111px; /* sets the maximum width of the box */
-  padding: 20px; /* adds padding to the box */
-  border: 10px solid #6466E9; /* adds an outline of color #6466E9 to the box */
-  border-radius: 20px; /* rounds the corners of the box */
-  display: inline block;
-  margin: 15px;
-  margin-bottom: 50px;
-}
-
-.container {
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 40px;
-background-color: #1c1f23ca;
-border-radius: 20px;
-margin-left: 85px;
-}
-
-.image {
-width: 50px;
-margin-left: 75px;
-margin-right: 160px;
-width: 150px;
-height: 150px;
-max-width: 150px;
-max-height: 150px;
-}
-
-.text {
-width: 50%;
-padding: 20px;
-text-align: center;
-}
-
-.redirect-signup-link {
-background-color: #6466E9;
-padding: 15px;
-border-radius: 15px;
-color: white;
-}
-
-a {
-color: #6466E9;
-font-weight: bold;
-text-decoration: none;
-}
-
-
-h2 {
-font-size: 24px; 
-margin-top: 0; 
+  color: #0583D2;
+  letter-spacing: 0.1em;
 }
 
 p {
-font-size: 18px; /* adjust to your desired font 
-margin-top: 0; /* reset default margin */
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  line-height: 0.1em;
 }
 
-/* Placeholder image style */
-.image[src="your-image-url.jpg"] {
-background-color: #ddd;
+p span {
+  background:#fff;
+  padding:0 10px;
 }
 
-.account-links {
-margin-left: 10px;
-padding: 10px;
-background-color: #6466E9;
-border-radius: 20px;
+input {
+  margin-bottom: 3%;
 }
 
-.reason1 {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 20px;
+input:last-of-type {
+  margin-bottom: 0;
 }
 
-.reason1 .vertical-box {
-width: 300px;
-text-align: center;
+input, button {
+  padding: 3%;
+  width: 100%;
 }
 
-.reason1 .vertical-box h3 {
-font-size: 1.5em;
-margin-top: 0;
+.login-container {
+  background-color: #f3f5f8;
+  border-radius: 10px;
+  box-shadow: 1 1 1 solid #ffffffd9;
+  padding: 7%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  /* horizontal align */
+  width: 40vw;
+  margin-left: 30vw;
+  /* vertical align */
+  height: 50vh;
+  margin-top: 20vh;
+  color: white;
 }
 
-.reason1 .vertical-box p {
-font-size: 1.2em;
-line-height: 1.5;
+#submit, #create-acct-btn {
+    color: #6466E9;
+    background-color: inherit;
+    font-weight: bold;
+    font-size: 16.5px;
 }
 
-.reason1 .vertical-box .redirect-signup-link a {
-display: inline-block;
-margin-top: 20px;
-padding: 10px 20px;
-background-color: #008CBA;
-color: white;
-font-size: 1.2em;
-text-decoration: none;
+button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
 }
 
-.reason1 .container {
-display: flex;
-justify-content: center;
-align-items: center;
-margin-top: 50px;
-}
-
-.reason1 .container .image {
-flex: 1;
-max-width: 300px;
-margin-right: 50px;
-}
-
-.reason1 .container .text {
-flex: 1;
-max-width: 500px;
-}
-
-.reason1 .container h2 {
-font-size: 2em;
-margin-top: 0;
-}
-
-.reason1 .container p {
-font-size: 1.2em;
-line-height: 1.5;
-}
-
-.myDiv:target{
-
-display:block !important;
-
-}
-
-.expose {
-  padding: 0 330px; /* Change the value as per your requirement */
-}
-
-
-.expose a {
+#sign-up {
+  border: 1.5px solid #6466E9;
   color: #6466E9;
-  text-align: center;
-  margin-top: 15px;
-  display: inline-flex;
-  flex-wrap: nowrap;
+  background-color: inherit;
+  font-weight: bold;
+  font-size: 16.5px;
 }
 
-
-
-.redirects {
-  margin-top: 85px;
+#create-acct {
+  display: none;
 }
 
-button {
-  margin-top: 85px;
-  background-color: #1c1f23;
-  border: 1px solid #6466E9;
-  border-radius: 7px;
-  color: white;
-  padding: 20px;
-  text-align: center;
+#return-btn {
+  background: none;
+  color: grey;
+  text-decoration: underline;
+  border: none;
+  margin-top: 3%;
+}
+
+#or {
+    color: #6466E9;
+    font-size: normal;
+    background-color: inherit;
   }
   
-  
-  img {
-    width: 350px;
-    height: 120px;
-    margin-top: -20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 36%;
-  }
-  
-  
-  input[type="email"] {
-    background-color: #1c1f23;
-    border: 1px solid;
-    border-color: #6466E9;
-    width: 210px;
-    height: 45px;
-    border: 1px solid;
-    border-color: #6466E9;
+
+  input[type="text"] {
+    background-color: #f3f5f8;
+    color: black;
+    border: 2px solid #3662E2;
     border-radius: 5px;
-    padding: 15px;
-    color: white;
-}
+    font-size: 16px;
+  }
 
+  input[type="email"] {
+    background-color: #f3f5f8;
+    color: black;
+    border: 2px solid #3662E2;
+    border-radius: 5px;
+    font-size: 16px;
+  }
 
-input[type="password"] {
-  background-color: #1c1f23;
-  border: 1px solid;
-  border-color: #6466E9;
-  width: 210px;
-  height: 45px;
-  border: 1px solid;
-  border-color: #6466E9;
-  border-radius: 5px;
-  padding: 15px;
-  color: white;
-}
+  input[type="password"] {
+    background-color: #f3f5f8;
+    color: black;
+    border: 2px solid #3662E2;
+    border-radius: 5px;
+    font-size: 16px;
+  }
 
-#create-account-button {
-background-color: inherit !important;
-color: inherit;
-border: 2px solid #6446E9;
-border-radius: 10px;
-padding: 15px;
-margin-top: 20px;
-}
-
-#why {
-margin-top: -15px;
-font-weight: normal;
-color: #fff;
-}
-
-#signup-link {
-  font-size: 26px;
-}
-
-#login-link {
-  font-size: 26px;
-  margin-left: 20px;
-}
+  #submit {
+    background-color: #f3f5f8;
+    color: #3662E2;
+    border: 2px solid #3662E2;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 16px;
+  }
