@@ -80,7 +80,7 @@ body {
   
   /* Style for odd list items */
   .odd {
-    background-color: #F9D923;
+    background-color: #f9d923d8;
     color: black;
     border-radius: 10px;
     font-weight: bold;
