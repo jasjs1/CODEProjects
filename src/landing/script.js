@@ -5,5 +5,5 @@ function createAccountOrLogin() {
     localStorage.setItem('name', nameInput.value);
     localStorage.setItem('email', emailInput.value);
 
-    window.location.href = 'http://www.google.com';
+    window.location.href = 'http://127.0.0.1:5500/src/projects/allProjects/allProjects.html'; // Projects Home Page
 }
