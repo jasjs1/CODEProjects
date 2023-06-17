@@ -277,3 +277,8 @@ input[type="submit"] {
   word-wrap: break-word;
   margin-right: 15%;
 }
+
+
+#no-questions-image img {
+  display: none;
+}

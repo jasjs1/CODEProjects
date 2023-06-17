@@ -126,7 +126,6 @@
       });
     </script>
 
-    <img id="no-questions-image" src="/assets/svg/noQuestionsFound.svg" />
 
     <script>
       // Check if there are questions in the local storage
@@ -170,6 +169,7 @@
                 <h3 id="question-asker">${asker}</h3>
                 <h2 id="question-title">${post.title}</h2>
                 <h3 id="question-description">${post.description}</h3>
+                <input type="text" id="answer-input" placeholder="Give the answer to this Question" required>
                 </div>
               </div>
             `;
@@ -183,12 +183,6 @@
       </script>
     </div>
 
-    <script>
-              function upvoteQuestion() {
-                var image = document.getElementById("upvoteImage");
-                image.src = "/assets/svg/questions/upvote/upvoteClicked.svg";
-            }
-    </script>
 
 
     <script src="script.js"></script>
