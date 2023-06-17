@@ -5,5 +5,5 @@ function createAccountOrLogin() {
     localStorage.setItem('name', nameInput.value);
     localStorage.setItem('email', emailInput.value);
 
-    location.href = ''
+    window.location.href = 'http://www.google.com';
 }
