@@ -80,7 +80,7 @@ body {
   
   /* Style for odd list items */
   .odd {
-    background-color: #f9d923d8;
+    background-color: #F9D923;
     color: black;
     border-radius: 10px;
     font-weight: bold;
@@ -101,7 +101,7 @@ body {
 
   #demo-button {
     margin-top: -5px;
-    background-color: #EFF2FE;
+    background-color: #d2d5e2;
     color: #3662E3;
     width: 100%;
     margin-top: 15px;
