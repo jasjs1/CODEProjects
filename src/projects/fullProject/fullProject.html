@@ -136,7 +136,7 @@ if (savedPosts.length) {
         <h2 id="question-title">${post.title}</h2>
         <h3 id="question-description">${post.description}</h3>
         <p id="quesiton-code">${post.code}</p>
-        <input type="text" id="answer-input" placeholder="Give the answer to this Question" required>
+        <button id="createAnswer" type="button">Proive a Answer</button>
       </div>
     `;
 
@@ -196,7 +196,7 @@ if (savedPosts.length) {
         const question = {
           title: titleInput.value,
           description: descriptionInput.value,
-          providedCode: noProvidedCode,
+          code: noProvidedCode,
         };
 
         // Check if there are already saved questions in the local storage
