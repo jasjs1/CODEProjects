@@ -99,10 +99,8 @@
   border: 1px solid #888;
   width: 100%;
   max-width: 800px;
-  height: 455px;
-  max-height: 585px;
   position: relative;
-  max-height: 585px;
+  max-height: 605px !important;
 }
 
 #closeModal {
@@ -218,6 +216,7 @@ input[type="submit"] {
   inline-size: 473px;
   transform: translate(50%);
   text-align: left;
+  display: absolute;
 }
 
 #openTableOfContents {
