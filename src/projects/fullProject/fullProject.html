@@ -39,9 +39,38 @@
 
   <button id="openTableOfContents" onclick="toggleTableOfContents()">Table of Contents</button>
   <button id="openQuestions">Questions</button>
-  <button id="openModal">Create a Question</button>
+  <button onclick="createQuestionHash()" id="openModal">Create a Question</button>
 
   <script>
+
+function toggleTableOfContents() {
+  const modalOverlay = document.getElementById("table-of-contents");
+  console.log('Toggle Table of Contents has been called');
+  
+  if (modalOverlay.style.display === 'none') {
+    modalOverlay.style.display = 'block';
+    window.location.hash = "#TableOfContents";
+  } else {
+    modalOverlay.style.display = 'none';
+    window.location.hash = "";
+  }
+}
+
+function createQuestionHash() {
+  const modalOverlay = document.getElementById("modalContent");
+  console.log('Create question hash has been called');
+  
+  if (modalOverlay.style.display === 'none') {
+    modalOverlay.style.display = 'block';
+    window.location.hash = "#createquestion";
+  } else {
+    modalOverlay.style.display = 'none';
+    window.location.hash = "";
+  }
+}
+
+
+
     document.addEventListener('DOMContentLoaded', function() {
       const questionButton = document.getElementById('openQuestions');
       const userCreatedQuestionsDiv = document.getElementById('questions');
@@ -74,9 +103,20 @@
       </script>
     </div>
 
-    <div id="questions" style="display: none;">
+    <div onclick="quesitonHash()" id="questions" style="display: none;">
       <script>
 
+        function quesitonHash() {
+            console.log('quesiton hash function called');
+            postsContainer.style.display = 'block';
+            window.location.hash = 'quesitons';
+
+            function removeQuesitonHash() {
+            console.log('quesiton hash removed from URL bar');
+            postsContainer.style.display = 'none';
+        }
+        removeQuesitonHash();
+        }
 
 // const form = document.querySelector("#createQuestionForm");
 const postsContainer = document.getElementById("questions");
