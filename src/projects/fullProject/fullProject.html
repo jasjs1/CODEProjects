@@ -56,19 +56,13 @@ function toggleTableOfContents() {
   }
 }
 
-function createQuestionHash() {
-  const modalOverlay = document.getElementById("modalContent");
-  console.log('Create question hash has been called');
-  
-  if (modalOverlay.style.display === 'none') {
-    modalOverlay.style.display = 'block';
-    window.location.hash = "#createquestion";
-  } else {
-    modalOverlay.style.display = 'none';
-    window.location.hash = "";
-  }
-}
-
+    function createQuestionHash() {
+        const modalOverlay = document.getElementById("modalContent");
+        console.log('Create question hash has been called');
+        modalOverlay.style.display = 'block';
+        window.location.hash = "#createquestion"
+        
+    }
 
 
     document.addEventListener('DOMContentLoaded', function() {
