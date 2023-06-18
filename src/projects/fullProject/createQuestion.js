@@ -1,4 +1,3 @@
-// Get the form element
 const form = document.getElementById("createQuestionForm");
 
 // Add an event listener to the form's submit event
