@@ -138,43 +138,90 @@
     </div>
 
     <script>
-        const sections = document.querySelectorAll('.section');
-        const continueButtons = document.querySelectorAll('.btn');
+      const sections = document.querySelectorAll('.section');
+    const continueButtons = document.querySelectorAll('.btn');
 
-        sections[0].style.display = 'block';
+    sections[0].style.display = 'block';
 
-        for (let i = 0; i < continueButtons.length; i++) {
-            const currentSection = sections[i];
-            const nextSection = sections[i + 1];
-            const continueButton = continueButtons[i];
+    for (let i = 0; i < continueButtons.length; i++) {
+        const currentSection = sections[i];
+        const nextSection = sections[i + 1];
+        const continueButton = continueButtons[i];
 
-            continueButton.addEventListener('click', (e) => {
-                e.preventDefault();
+        continueButton.addEventListener('click', (e) => {
+            e.preventDefault();
 
-                // Validate inputs in the current section
-                const inputs = currentSection.querySelectorAll('input[required], select[required]');
-                let isValid = true;
+            // Validate inputs in the current section
+            const inputs = currentSection.querySelectorAll('input[required], select[required]');
+            let isValid = true;
 
-                inputs.forEach((input) => {
-                    if (input.value.trim() === '') {
-                        isValid = false;
-                    }
-                });
-
-                if (!isValid) {
-                    alert('Please fill in all required fields.');
-                    return;
-                }
-
-                currentSection.style.display = 'none';
-                if (nextSection) {
-                    nextSection.style.display = 'block';
-                } else {
-                    // Perform form submission or any other necessary actions
-                    alert('Account created successfully!');
+            inputs.forEach((input) => {
+                if (input.value.trim() === '') {
+                    isValid = false;
                 }
             });
+
+            if (!isValid) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            currentSection.style.display = 'none';
+            if (nextSection) {
+                nextSection.style.display = 'block';
+            } else {
+                // Perform form submission or any other necessary actions
+                console.log('Account created successfully!');
+            }
+        });
+    }
+
+    // Additional code to save individual values to localStorage
+
+    continueButtons[2].addEventListener('click', (e) => {
+        e.preventDefault();
+
+        // Validate inputs in the current section (Section 3)
+        const currentSection = sections[2];
+        const inputs = currentSection.querySelectorAll('input[required], select[required], textarea[required]');
+        let isValid = true;
+
+        inputs.forEach((input) => {
+            if (input.value.trim() === '') {
+                isValid = false;
+            }
+        });
+
+        if (!isValid) {
+            alert('Please fill in all required fields.');
+            return;
         }
+
+        // Save the individual values into localStorage
+        const projectTitle = document.getElementById('project-title').value;
+        const projectDescription = document.getElementById('project-description').value;
+        const projectCover = document.getElementById('project-cover').value;
+        const skillType = document.getElementById('skill-type').value;
+        const demoVideo = document.getElementById('demo-video').value;
+        const requiredSkills = Array.from(document.getElementById('required-skills').options)
+            .filter(option => option.selected)
+            .map(option => option.value);
+        const tableOfContents = document.getElementById('table-of-contents').value;
+        const projectContent = document.getElementById('project-content').value;
+
+        // Store the values in localStorage with unique keys for each value
+        localStorage.setItem('projectTitle', projectTitle);
+        localStorage.setItem('projectDescription', projectDescription);
+        localStorage.setItem('projectCover', projectCover);
+        localStorage.setItem('skillType', skillType);
+        localStorage.setItem('demoVideo', demoVideo);
+        localStorage.setItem('requiredSkills', JSON.stringify(requiredSkills));
+        localStorage.setItem('tableOfContents', tableOfContents);
+        localStorage.setItem('projectContent', projectContent);
+
+        // Perform form submission or any other necessary actions
+        console.log('Account created successfully!');
+    });
     </script>
 </body>
 </html>
