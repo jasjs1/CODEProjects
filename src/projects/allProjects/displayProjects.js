@@ -26,5 +26,3 @@ if (projectTitle && skillLevel && savedImage) {
   skillLevelContainer.appendChild(noDetailsElement);
         }
 
-
-        
