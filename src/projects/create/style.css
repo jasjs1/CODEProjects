@@ -1,8 +1,4 @@
 
-body {
-    margin-left: 144px;
-}
-
 #profileLinks {
     position: absolute;
     float: right;
@@ -39,7 +35,6 @@ input[type="text"] {
 }
 
 input[type="url"] {
-  width: 600px;
   border: 2px solid #3662E3;
   border-radius: 10px;
   color: black;
@@ -76,7 +71,8 @@ input[type="file"] {
   margin-top: -5px;
   background-color: #3662e3;
   color: white;
-  width: 55%;
+  width: 250px;
+  border-radius: 30px;
   margin-top: 15px;
   padding: 18px;
   font-size: 23.5px;

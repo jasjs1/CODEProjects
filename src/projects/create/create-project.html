@@ -1,162 +1,180 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.svg" />
-    <link href="/dist/output.css" rel="stylesheet">
-    <link href="/components/nav/nav.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-    <link rel="stylesheet" href="/components/markdownEditor/formatting.css"> <!-- For Markdown Editor -->
-    
-    <title>Create Project · CODEProjects</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/src/body.css">
+    <title>Create FontFlex Developer Account</title>
+    <style>
+        #signup-form {
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 50px;
+            max-width: 600px; /* Set a maximum width for the container */
+        }
+        #signup-form h3 {
+            margin-top: 20px;
+        }
+        #signup-form input[type="text"],
+        #signup-form input[type="password"],
+        #signup-form select {
+            display: block;
+            margin: 10px auto;
+            width: 300px;
+        }
+        #signup-form .checkbox {
+            margin-top: 10px;
+        }
+        #signup-form .btn {
+            margin-top: 20px;
+        }
+        .section {
+            display: none;
+        }
+        iframe {
+            width: 100%;
+            height: 100px; /* You may adjust the height as per your requirement */
+            border: none; /* Remove the border around the iframe */
+        }
+
+        #signup-form {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        button {
+          background-color: #3662E3;
+          color: white;
+          width: 300px;
+          padding: 15px;
+          border: 0;
+          border-radius: 50px;
+        }
+    </style>
 </head>
 <body>
-    <link rel="stylesheet" href="/components/nav/nav.css">
-    <iframe src="/components/nav/nav.html" style="width: 100%;"></iframe>
+    
+    <div id="signup-form">
+        <form>
+            <div id="section1" class="section">
+                <h3 id="section1-title" class="section-title">First, we need some basic information on your project.</h3>
+                <input type="text" id="project-title" placeholder="Project Title" minlength="3" maxlength="35" required>
+                <input type="text" id="project-description" placeholder="Project Descripton" minlength="25" maxlength="250" required>
+                <button id="continue1" class="btn">Continue</button>
+            </div>
 
-    <div id="create-project">
-        <h2 id="create-project-text">Create a Project</h2>
-    
-        <form onsubmit="createProject(event)">
-          <p>Project Title<span id="red-asterisk">*</span></p>
-          <input type="text" id="project-title" required>
-    
-          <p>Project Description<span id="red-asterisk">*</span></p>
-          <input type="text" id="project-description" required>
-    
-          <p>Project Cover Image<span id="red-asterisk">*</span></p>
-          <input type="file" id="project-cover" required>
-          <br>
-    
-          <p>Skill Type<span id="red-asterisk">*</span></p>
-          <select id="skill-type">
-            <option value="Beginner">Beginner</option>
-            <option value="Intermediate">Intermediate</option>
-            <option value="Expert">Expert</option>
-            <option value="Any Skill Level">Any Skill Level</option>
-          </select>
-    
-          <p>Demo Video - YouTube <span id="red-asterisk">*</span></p>
-          <input type="url" id="demo-video" required>
+            <div id="section2" class="section">
+                <h3 id="section2-title" class="section-title">Next, we need some more indepth information about your project.</h3>
+                <input type="file" id="project-cover" required>
+                <select id="skill-type" placeholder="Skill Level Required">
+                  <option value="Any Skill Level">Any Skill Level</option>
+                  <option value="Beginner">Beginner</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Expert">Expert</option>
+                </select>
 
-          <p>Required Skills <span id="red-asterisk">*</span></p>
-          <select id="required-skills" multiple>
-            <option value="Ada">Ada</option>
-            <option value="Assembly">Assembly</option>
-            <option value="AWK">AWK</option>
-            <option value="Bash">Bash</option>
-            <option value="C">C</option>
-            <option value="C#">C#</option>
-            <option value="C++">C++</option>
-            <option value="Clojure">Clojure</option>
-            <option value="CoffeeScript">CoffeeScript</option>
-            <option value="CSS">CSS</option>
-            <option value="D">D</option>
-            <option value="Dart">Dart</option>
-            <option value="Elixir">Elixir</option>
-            <option value="Elm">Elm</option>
-            <option value="Erlang">Erlang</option>
-            <option value="F#">F#</option>
-            <option value="Fortran">Fortran</option>
-            <option value="Go">Go</option>
-            <option value="Groovy">Groovy</option>
-            <option value="Haskell">Haskell</option>
-            <option value="HTML">HTML</option>
-            <option value="HTML, CSS, JavaScript">HTML, CSS, JavaScript</option>
-            <option value="Java">Java</option>
-            <option value="JavaScript">JavaScript</option>
-            <option value="Julia">Julia</option>
-            <option value="Jupyter Notebook">Jupyter Notebook</option>
-            <option value="Kotlin">Kotlin</option>
-            <option value="Lua">Lua</option>
-            <option value="Objective-C">Objective-C</option>
-            <option value="OCaml">OCaml</option>
-            <option value="Pascal">Pascal</option>
-            <option value="Perl">Perl</option>
-            <option value="PHP">PHP</option>
-            <option value="Python">Python</option>
-            <option value="R">R</option>
-            <option value="React">React</option>
-            <option value="React Native">React Native</option>
-            <option value="Ruby">Ruby</option>
-            <option value="Rust">Rust</option>
-            <option value="Scala">Scala</option>
-            <option value="Scheme">Scheme</option>
-            <option value="SQL">SQL</option>
-            <option value="Swift">Swift</option>
-            <option value="Swift & SwiftUI">Swift & SwiftUI</option>
-            <option value="TypeScript">TypeScript</option>
-          </select>
+                <input type="url" id="demo-video" placeholder="Demo Video" required>
 
-          <p>Table of Contents <span id="red-asterisk">*</p>
-          <textarea id="table-of-contents" required></textarea>
-     
-          <p>Project Content <span id="red-asterisk">*</span></p>
-          <textarea id="project-content"></textarea>
-          <br>
-    
-          <div id="info">
-            <img src="/assets/svg/information.svg">
-            <p>When you create a Project that goes to your profile and is under your name. Make sure that this is a quality Project before creating.</p>
-          </div>
-          <br>
-    
-          <button id="submit" type="submit">Create Project</button>
+                <button id="continue2" class="btn">About Project Area</button>
+            </div>
+
+            <div id="section3" class="section">
+                <h3 id="section3-title" class="section-title">Finally, lets create your project!</h3>
+                <select id="required-skills" multiple>
+                  <option value="Ada">Ada</option>
+                  <option value="Assembly">Assembly</option>
+                  <option value="AWK">AWK</option>
+                  <option value="Bash">Bash</option>
+                  <option value="C">C</option>
+                  <option value="C#">C#</option>
+                  <option value="C++">C++</option>
+                  <option value="Clojure">Clojure</option>
+                  <option value="CoffeeScript">CoffeeScript</option>
+                  <option value="CSS">CSS</option>
+                  <option value="D">D</option>
+                  <option value="Dart">Dart</option>
+                  <option value="Elixir">Elixir</option>
+                  <option value="Elm">Elm</option>
+                  <option value="Erlang">Erlang</option>
+                  <option value="F#">F#</option>
+                  <option value="Fortran">Fortran</option>
+                  <option value="Go">Go</option>
+                  <option value="Groovy">Groovy</option>
+                  <option value="Haskell">Haskell</option>
+                  <option value="HTML">HTML</option>
+                  <option value="HTML, CSS, JavaScript">HTML, CSS, JavaScript</option>
+                  <option value="Java">Java</option>
+                  <option value="JavaScript">JavaScript</option>
+                  <option value="Julia">Julia</option>
+                  <option value="Jupyter Notebook">Jupyter Notebook</option>
+                  <option value="Kotlin">Kotlin</option>
+                  <option value="Lua">Lua</option>
+                  <option value="Objective-C">Objective-C</option>
+                  <option value="OCaml">OCaml</option>
+                  <option value="Pascal">Pascal</option>
+                  <option value="Perl">Perl</option>
+                  <option value="PHP">PHP</option>
+                  <option value="Python">Python</option>
+                  <option value="R">R</option>
+                  <option value="React">React</option>
+                  <option value="React Native">React Native</option>
+                  <option value="Ruby">Ruby</option>
+                  <option value="Rust">Rust</option>
+                  <option value="Scala">Scala</option>
+                  <option value="Scheme">Scheme</option>
+                  <option value="SQL">SQL</option>
+                  <option value="Swift">Swift</option>
+                  <option value="Swift & SwiftUI">Swift & SwiftUI</option>
+                  <option value="TypeScript">TypeScript</option>
+                </select>
+      
+                <textarea id="table-of-contents" placeholder="Table of Contents" required></textarea>
+                <textarea id="project-content" placeholder="Project Content"></textarea>
+
+                <button id="continue3" class="btn">Create Project</button>
+            </div>
         </form>
-      </div>
-    
-      <script>
-        function createProject(event) {
-          event.preventDefault(); // Prevent form submission
-    
-          const form = event.target; // Get the form element
-          const projectTitle = form.querySelector('#project-title').value;
-          const projectDescription = form.querySelector('#project-description').value;
-          const imageInput = form.querySelector('#project-cover');
-          const file = imageInput.files[0];
-          const content = form.querySelector('#project-content').value;
-          const skillLevel = form.querySelector('#skill-type').value.trim();
-          const YouTubeURLDemoVideo = form.querySelector('#demo-video').value.trim();
-          const requiredSkills = Array.from(document.getElementById('required-skills').options)
-            .filter(option => option.selected)
-            .map(option => option.value.trim());
-          const tableOfContents = document.querySelector('#table-of-contents').value;
-    
-          if (projectTitle && projectDescription && file) {
-            const reader = new FileReader();
-            reader.readAsDataURL(file);
-    
-            reader.onload = function (event) {
-              const imageDataUrl = event.target.result;
-    
-              localStorage.setItem('savedImage', imageDataUrl);
-              localStorage.setItem('projectTitle', projectTitle);
-              localStorage.setItem('projectDescription', projectDescription);
-              localStorage.setItem('projectContent', content);
-              localStorage.setItem('skillLevel', skillLevel);
-              localStorage.setItem('demoVideo', YouTubeURLDemoVideo);
-              localStorage.setItem('requiredSkills', JSON.stringify(requiredSkills));
-              localStorage.setItem('tableOfContents', tableOfContents);
-    
-              // You can choose to redirect to another page or perform other actions here
-              console.log('Project created successfully!');
-              form.reset();
-              window.location.href = 'http://127.0.0.1:5500/src/projects/allProjects/allProjects.html';
-            };
-          } else {
-            alert('Please fill in all the required fields.');
-            console.error('Please fill in all the required fields.');
-          }
-        }
-      </script>
+    </div>
 
-    <script src="script.js"></script>
-    <script src="/components/FontFlex/FontFlexComponents/scripts/createFormatting.js"></script> 
-    <script src="adaptSizeOfTextarea.js"></script>
-    <script src="/components/FontFlex/FontFlexComponents/scripts/createFormatting.js"></script>
+    <script>
+        const sections = document.querySelectorAll('.section');
+        const continueButtons = document.querySelectorAll('.btn');
+
+        sections[0].style.display = 'block';
+
+        for (let i = 0; i < continueButtons.length; i++) {
+            const currentSection = sections[i];
+            const nextSection = sections[i + 1];
+            const continueButton = continueButtons[i];
+
+            continueButton.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                // Validate inputs in the current section
+                const inputs = currentSection.querySelectorAll('input[required], select[required]');
+                let isValid = true;
+
+                inputs.forEach((input) => {
+                    if (input.value.trim() === '') {
+                        isValid = false;
+                    }
+                });
+
+                if (!isValid) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+
+                currentSection.style.display = 'none';
+                if (nextSection) {
+                    nextSection.style.display = 'block';
+                } else {
+                    // Perform form submission or any other necessary actions
+                    alert('Account created successfully!');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
