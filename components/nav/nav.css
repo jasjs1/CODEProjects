@@ -137,8 +137,7 @@
   padding: 6px;
   border: 0;
   font-weight: bold;
-  border-radius: 50px; /* Use 50px for a circular shape */
-  box-shadow: 1px 1px 10px #3662E3;
+  border-radius: 50px;
   margin-left: 10px;
 }
 
@@ -156,8 +155,7 @@
   padding: 6px;
   border: 0;
   font-weight: bold;
-  border-radius: 50px; /* Use 50px for a circular shape */
-  box-shadow: 1px 1px 10px #3662E3;
+  border-radius: 50px;
   margin-left: 10px;
 }
 
