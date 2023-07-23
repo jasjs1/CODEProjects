@@ -6,10 +6,11 @@ body {
 }
 
 #our-coding-tutorials-txt {
-    transform: translate(32%,32%);
+    /* transform: translate(32%,32%); */
     margin-top: -70px;
     font-weight: bold;
     font-size: 2.25rem;
+    text-align: center;
 }
 
 #created-projects {
