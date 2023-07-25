@@ -151,16 +151,16 @@
 <div class="main-content" id="home">
   <h1>Account</h1>
   <p style="margin-bottom: 50px;">Edit your account details here.</p>
-
-  <h3>Basic Information</h3>
-  <h3 id="user-name" class="info"></h3>
-  <h3 id="user-email" class="info"></h3>
-
-  <!-- Edit Button -->
   <div id="edit">
     <img src="/assets/svg/dashboard/edit.svg">
     <span>EDIT</span>
   </div>
+
+  <h2>Basic Information</h2>
+  <h3 id="user-name" class="info"></h3>
+  <h3 id="user-email" class="info"></h3>
+
+
 </div>
 
 <script>
@@ -190,7 +190,6 @@
 
     const nameLabel = document.createElement('label');
     nameLabel.textContent = 'Name:';
-    nameLabel.innerHTML = `<br>`;
     const nameInput = document.createElement('input');
     nameInput.type = 'text';
     nameInput.value = name; // Populate the input with the current name
