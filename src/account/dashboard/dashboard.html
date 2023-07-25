@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="dashboard.css">
+  <title>Profile Dashboard · CODEProjects</title>
+  <style>
+    /* Reset some default styles */
+    body, h1, p, ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      bottom: 20px; /* Add space from the bottom */
+      height: auto; /* Change the height to auto */
+      width: 220px;
+      background-color: rgba(54, 98, 227, 0.82); /* Red color with 50% opacity */
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 24px;
+    }
+
+    .sidebar h1 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar li {
+      margin-bottom: 10px;
+    }
+
+    .sidebar a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      background-color: #3662E3;
+    }
+
+    /* Main content styles */
+    .main-content {
+      margin-left: 280px;
+      margin-top: 20px;
+      margin-right: 20px;
+      padding: 20px;
+      background-color: #ecf0f1;
+      border-radius: 10px;
+    }
+
+    /* Sidebar icon styles */
+    .sidebar-icon {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Media query for responsiveness */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        margin: 0;
+        border-radius: 0;
+      }
+
+      .main-content {
+        margin-left: 0;
+        margin-top: 20px;
+      }
+
+      .sidebar-icon {
+        display: inline-block;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h1>CODEProjects</h1>
+    <p style="font-size: 14px; color: lightgray;">ACCOUNT</p>
+    <ul>
+      <li>
+        <a href="#" onclick="showDiv('home')">
+          <img src="/assets/svg/dashboard/personSmile.svg" alt="Icon" width="20" height="20">
+          Account
+        </a>
+      </li>
+
+      <li>
+        <a href="#" onclick="showDiv('about')">
+          <img src="/assets/svg/dashboard/profile.svg" alt="Icon" width="20" height="20">
+          Profile
+        </a>
+      </li>
+      
+      <li>
+        <a href="#" onclick="showDiv('about')">
+          <img src="/assets/svg/dashboard/security.svg" alt="Icon" width="20" height="20">
+          Security
+        </a>
+      </li>
+      <li id="createProject">
+        <a href="#" =>
+          <a href="http://127.0.0.1:5500/src/projects/create/create-project.html">Create Project</a>
+        </a>
+      </li>
+
+      <p style="font-size: 14px; color: lightgray;">PROJECT DASHBOARD</p>
+
+      <li>
+        <a href="#" onclick="showDiv('home')">
+          <img src="/assets/svg/dashboard/yourProjects.svg" alt="Icon" width="20" height="20">
+          Your Projects
+        </a>
+      </li>
+      <li>
+        <a href="#" onclick="showDiv('home')">
+          <img src="/assets/svg/dashboard/dasboard.svg" alt="Icon" width="20" height="20">
+          Dashboard
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Sidebar icon for mobile -->
+  <div class="sidebar-icon">&#9776;</div>
+
+<!-- Main Content - Home -->
+<div class="main-content" id="home">
+  <h1>Account</h1>
+  <p style="margin-bottom: 50px;">Edit your account details here.</p>
+
+  <h3>Basic Information</h3>
+  <h3 id="user-name" class="info"></h3>
+  <h3 id="user-email" class="info"></h3>
+
+  <!-- Edit Button -->
+  <div id="edit">
+    <img src="/assets/svg/dashboard/edit.svg">
+    <span>EDIT</span>
+  </div>
+</div>
+
+<script>
+  // Get the values from localStorage
+  const name = localStorage.getItem('signup-name');
+  const email = localStorage.getItem('email');
+
+  // Select the <h3> elements by their IDs
+  const nameElement = document.getElementById('user-name');
+  const emailElement = document.getElementById('user-email');
+
+  // Set the text content of the <h3> elements with the corresponding values
+  nameElement.textContent = name;
+  emailElement.textContent = email;
+
+  // Add an event listener to the "EDIT" button
+  const editButton = document.getElementById('edit');
+  editButton.addEventListener('click', () => {
+    // Assuming you have an edit form, you can show it here
+    // For example, you might have a function to show the edit form
+    showEditForm();
+  });
+
+  // Function to show the edit form
+  function showEditForm() {
+    const editForm = document.createElement('form');
+
+    const nameLabel = document.createElement('label');
+    nameLabel.textContent = 'Name:';
+    nameLabel.innerHTML = `<br>`;
+    const nameInput = document.createElement('input');
+    nameInput.type = 'text';
+    nameInput.value = name; // Populate the input with the current name
+
+    const emailLabel = document.createElement('label');
+    emailLabel.textContent = 'Email:';
+    const emailInput = document.createElement('input');
+    emailInput.type = 'email';
+    emailInput.value = email;
+
+    const saveButton = document.createElement('button');
+    saveButton.textContent = 'Save';
+
+    // Add event listener to the save button to handle the form submission
+    saveButton.addEventListener('click', () => {
+      // Assuming you have a function to handle saving the edited information
+      saveEditedInformation(nameInput.value, emailInput.value);
+    });
+
+    editForm.appendChild(nameLabel);
+    editForm.appendChild(nameInput);
+    editForm.appendChild(emailLabel);
+    editForm.appendChild(emailInput);
+    editForm.appendChild(saveButton);
+
+    // Replace the content of the main-content div with the edit form
+    const mainContentDiv = document.getElementById('home');
+    mainContentDiv.innerHTML = '';
+    mainContentDiv.appendChild(editForm);
+  }
+
+  // Function to save the edited information
+  function saveEditedInformation(newName, newEmail) {
+    // Assuming you have a way to save the edited information (e.g., using localStorage or sending it to a server)
+    // For example:
+    localStorage.setItem('signup-name', newName);
+    localStorage.setItem('email', newEmail);
+
+    // Update the displayed information after saving
+    nameElement.textContent = newName;
+    emailElement.textContent = newEmail;
+
+    // Show a confirmation or success message if desired
+    console.log('New user data saving to localstorage...');
+    console.log("USER MODIFIED: name or email.")
+  }
+</script>
+
+
+  <!-- Main Content - About -->
+  <div class="main-content" id="about" style="display: none;">
+    <h1>About Us</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla feugiat interdum tellus, eget dapibus magna luctus a.</p>
+  </div>
+
+  <!-- Add other content divs here (Services, Contact, etc.) -->
+
+  <script>
+    function showDiv(section) {
+      // Get all the content divs
+      var divs = document.getElementsByClassName("main-content");
+
+      // Loop through the divs and hide them all
+      for (var i = 0; i < divs.length; i++) {
+        divs[i].style.display = "none";
+      }
+
+      // Show the selected div
+      document.getElementById(section).style.display = "block";
+    }
+  </script>
+</body>
+<script src="dash.js"></script>
+</html>
