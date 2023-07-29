@@ -5,25 +5,36 @@
     <a href="#" class="logo">
       <img src="/assets/favicon.svg" alt="Logo" class="logo-image">
       <span class="logo-text" onclick="window.open('http://127.0.0.1:5500/src/projects/createdProjectsHomePage/allProjects.html#', '_parent')">CODEProjects</span>
-
     </a>
     <ul class="menu-items">
       <li><a href="#" class="active">Learning</a></li>
-      <li><a href="#">Feed</a></li>
-      <li><img id="plus-icon" onclick="displayProfileRelatedLinks()" src="/assets/svg/plus.svg" class="menu-icon"></li>
       <li><img onclick="displayProfileRelatedLinks()" src="/assets/svg/personSmile.svg" class="menu-icon"></li>
     </ul>
   </div>
 </nav>
 
+<script>
+  function displayProfileRelatedLinks() {
+    var profileLinksElement = document.getElementById('profileLinks');
+    var plusIcon = document.querySelector(".menu-icon img"); // Get the first img element with class "menu-icon"
+
+    if (profileLinksElement.style.display === "none") {
+      profileLinksElement.style.display = "block";
+      plusIcon.src = "/assets/svg/minus.svg"; // Change the image source to the minus icon
+    } else {
+      profileLinksElement.style.display = "none";
+      plusIcon.src = "/assets/svg/personSmile.svg"; // Change the image source back to the original profile icon
+    }
+  }
+</script>
 
 <div id="createContent" class="content-image-sub-container" style="display: none;">
   <a href="http://127.0.0.1:5500/src/projects/create/create-project.html" target="_parent">Project</a>
-
 </div>
 
 <div id="profileLinks" class="profile-image-sub-container" style="display: none;">
   <a href="http://127.0.0.1:5500/src/profile/profile.html" target="_parent">Profile</a>
   <br>
+  <a href=
   <a href="http://127.0.0.1:5500/src/landing/landing.html" target="_parent">Logout</a>
 </div>
